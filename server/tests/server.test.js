@@ -147,10 +147,9 @@ const todos = [{
   describe("PATCH /todos/:id", () => {
 
     it("should update a todo", (done) => {
-      var text = "Updated from test.js";
-
-      request(app)
-      .patch(`/todos/${todos[0]._id.toHexString()}`)
+      var text = "First todo updated from the test suite";
+      request(app).
+      patch(`/todos/${todos[0]._id.toHexString()}`)
       .send({
         text: text,
         completed: true
@@ -163,6 +162,7 @@ const todos = [{
       })
       .end(done);
     });
+
 
     it("should clear completed at when a todo is not completed", (done) => {
       var text = "Second todo updated from the test suite";

@@ -5,7 +5,7 @@
   "main": "app.js",
   "scripts": {
     "start": "node server/server.js",
-    "test": "mocha **/*.test.js",
+    "test": "export NODE_ENV=test || SET \"NODE_ENV=test\" && mocha server/**/*.test.js",
     "watch:test": "nodemon --exec \" npm test \" "
   },
   "author": "",

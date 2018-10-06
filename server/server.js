@@ -1,4 +1,5 @@
 //Libraries/frameworks imports
+require("./config/config");
 const _ = require("lodash");
 const express = require("express");
 const bodyParser = require("body-parser");
@@ -94,7 +95,7 @@ app.patch("/todos/:id", (req, res) => {
     if (!todo) {
       return res.status(404).send();
     }
-  
+
     res.send({todo});
   }).catch((err) => {
       res.status(400).send();
